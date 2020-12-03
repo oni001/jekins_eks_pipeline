@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: myweb
-  name: crccheck/hello-world
+  name: myweb
 spec:
   replicas: 1
   selector:
@@ -16,9 +16,9 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: localhost:5000
+      - image: crccheck/hello-world
         imagePullPolicy: Always
-        name: crccheck/hello-world
+        name: myweb
 
 ---
 apiVersion: v1
@@ -26,7 +26,7 @@ kind: Service
 metadata:
   labels:
     app: myweb
-  name: crccheck/hello-world
+  name: myweb
 spec:
   ports:
   - nodePort: 8000
