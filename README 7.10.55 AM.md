@@ -1,1 +1,0 @@
-# jekins_eks_pipeline
